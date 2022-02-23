@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+/*
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif;
+Weights: 400, 700
+*/
+
+:root {
+    --primary-color: hsl(244, 38%, 16%); /* Dark desaturated blue (card background) */
+    --secondary-color: hsl(277, 64%, 61%); /* Soft violet (accent) */
+    --dark-color: hsl(233, 47%, 7%); /* Very dark blue (main background) */
+    --light-color: hsl(0, 0%, 100%); /* White (main heading, stats) */
+    --light-color-two: hsla(0, 0%, 100%, 0.60); /* Slightly transparent white (main paragraph) */
+    --light-color-three: hsla(0, 0%, 100%, 0.6); /* Slightly transparent white (stat headings) */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--dark-color);
+    display: flex;
+    height: 100vh;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.063rem;
+    margin-bottom: 1.6rem;
+    margin-top: 4.4rem;
+    margin-left: 4.4rem;
+    margin-right: 3rem;
+}
+
+h1, h2 {
+    color: var(--light-color);
+    font-family: 'Inter', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+span {
+    display: inline-block;
+    color: var(--secondary-color);
+}
+
+span:hover {
+    color: hsl(277, 100%, 70%);
+    transition: 0.3s ease-in-out 0.2s;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+
+/* Classes */
+.main-container {
+    border-radius: 0.5rem;
+}
+
+.main-container .img-div {
+    width: 540px;
+    height: 446px;
+    background-color: hsl(281, 100%, 27%); /* hsl(281, 100%, 32%) */
+    opacity: 0.5;
+}
+
+.main-container .img-div:hover {
+    background-color: hsl(281, 100%, 35%);
+    cursor: pointer;
+    transition: 0.8s ease-in-out 0.3s;
+}
+
+.main-container .img-wrapper, .img-div {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.main-container .img-wrapper {
+    background: url("../images/image-header-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.info-container {
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-color: var(--primary-color);
+    width: 582px;
+    height: 446px;
+}
+
+.info-container .description {
+    font-size: 0.963rem;
+    color: var(--light-color-two);
+    line-height: 1.65rem;
+    margin-right: 8rem;
+    margin-left: 4.4rem;
+}
+
+.stats-container {
+    margin-top: 4.2rem;
+    margin-right: 4.4rem;
+    margin-left: 4.4rem;
+}
+
+.stats-container #queries-heading,
+.stats-container .stats-paragraph {
+    text-transform: uppercase;
+}
+
+.stats-container .stats-paragraph {
+    color: var(--light-color-three);
+    font-size: 0.713rem;
+    font-weight: 400;
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: 0.075rem;
+    line-height: 1.8rem;
+}
+
+.stats-items {
+    margin-right: 4.3rem;
+}
+
+.stats-items h2 {
+    font-size: 1.48rem;
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    h1 {
+        margin: 0 0 1.6rem 0;
+    }
+
+    .main-container {
+        flex-direction: column-reverse;
+        margin: 5.625rem 0;
+    }
+
+    .main-container .img-wrapper {
+        background: url("../images/image-header-mobile.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .main-container .img-div {
+        width: 590px;
+        height: 433px;
+    }
+
+    .main-container .img-wrapper, .img-div {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .info-container {
+        width: 590px;
+        height: auto;
+        text-align: center;
+        padding: 4.375rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .info-container .description {
+        margin: 0;
+    }
+
+    .stats-container {
+        justify-content: space-around;
+    }
+
+    .stats-items {
+        margin-right: 0;
+    }
+
+    .stats-container .stats-paragraph {
+        line-height: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.85rem;
+        line-height: 2.2rem;
+        padding: 0 2.563rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .main-container {
+        margin: 5rem 0;
+    }
+
+    .main-container .img-div {
+        width: 375px;
+        height: 275px;
+    }
+
+    .info-container {
+        width: 375px;
+        padding: 3rem 0 0.625rem 0;
+    }
+
+    .info-container .description {
+        margin: 0;
+        padding: 0 2.188rem;
+        font-size: 1.063rem;
+        line-height: 1.8rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        margin-top: 2.8rem;
+    }
+
+    .stats-items {
+        margin-bottom: 1.6rem;
+    }
+}
